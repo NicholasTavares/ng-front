@@ -1,6 +1,6 @@
 import baseAPI from "./baseAPI";
 
-type SignInPost = {
+type SignInPostProps = {
   username: string;
   password: string;
 };
@@ -12,7 +12,7 @@ type SignInResponse = {
 export const signInPost = async ({
   username,
   password,
-}: SignInPost): Promise<SignInResponse> => {
+}: SignInPostProps): Promise<SignInResponse> => {
   const response = await baseAPI.post("/auth/login", {
     username,
     password,
