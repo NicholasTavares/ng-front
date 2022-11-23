@@ -38,6 +38,7 @@ export const Transference = () => {
   const { mutate, isLoading, isSuccess } = useMutation(transactionPost, {
     onSuccess: () => {
       queryClient.invalidateQueries(["user"]);
+      queryClient.invalidateQueries(["userTransfers"]);
       reset();
     },
     onError: () => {
@@ -49,6 +50,9 @@ export const Transference = () => {
 
   return (
     <S.Container>
+      <S.TitleContainer>
+        <S.Title>Transfer</S.Title>
+      </S.TitleContainer>
       <S.Form onSubmit={handleSubmit(onSubmit)}>
         <S.LabelFieldContainer>
           <S.Label htmlFor="value">Value</S.Label>
@@ -66,7 +70,6 @@ export const Transference = () => {
                 },
                 validate: {
                   checkValue: (v) => {
-                    console.log(VF.isValidValue(v));
                     return VF.isValidValue(v) || ERRORS.INVALID_VALUE;
                   },
                 },

@@ -13,6 +13,18 @@ export const Container = styled.section`
   padding: 1.5rem;
   background-color: ${({ theme }) => theme.colors["gray/200"]};
   box-shadow: 1px 3px 15px 1px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  margin-bottom: 1rem;
+`;
+
+export const Title = styled.h2`
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.publeNg};
 `;
 
 export const Form = styled.form`
