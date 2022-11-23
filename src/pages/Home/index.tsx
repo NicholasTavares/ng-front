@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { Transference } from "../../components/Transference";
 import { MyTransfers } from "../../components/ MyTransfers";
+import { memo } from "react";
 
 const Home = () => {
   const auth = useAuth();
@@ -44,4 +45,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default memo(Home);
