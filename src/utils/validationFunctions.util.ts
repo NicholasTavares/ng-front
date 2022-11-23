@@ -6,6 +6,7 @@ export const isValidEmail = (email: string) =>
 export const isValidName = (name: string) => name.length >= 3;
 export const isValidPassword = (password: string) =>
   // eslint-disable-next-line no-useless-escape
-  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/.test(
+  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{6,}$/.test(
     password
   );
+export const isValidValue = (value: number) => value > 0;

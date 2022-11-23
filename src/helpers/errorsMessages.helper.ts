@@ -3,3 +3,4 @@ export const INVALID_PASSWORD =
 export const INVALID_USERNAME = "Name must have at minimum 3 characters";
 export const USERNAME_EXISTS = "Username already exists";
 export const INVALID_SIGNIN = "Incorrect email or password";
+export const INVALID_VALUE = "Invalid value";
