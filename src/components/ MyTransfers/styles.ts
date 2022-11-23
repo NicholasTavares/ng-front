@@ -1,25 +1,32 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 type TransferProps = {
   typeTransfer: boolean;
 };
 
 export const Container = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 1rem;
   width: 100%;
-  min-height: 8rem;
-  padding: 1.5rem;
-  background-color: ${({ theme }) => theme.colors["gray/200"]};
-  box-shadow: 1px 3px 15px 1px rgba(0, 0, 0, 0.3);
-  max-height: 20rem;
   overflow-y: auto;
+  height: 100%;
+  max-height: 30rem;
+
+  ${media.greaterThan("medium")`
+    max-height: 40rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  `}
 `;
 
 export const TitleContainer = styled.div`
   display: flex;
   margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: ${({ theme }) => theme.colors["gray/50"]};
 `;
 
 export const Title = styled.h2`
@@ -63,4 +70,9 @@ export const Topic = styled.span`
 export const TopicContent = styled.span`
   font-size: 1.4rem;
   color: black;
+`;
+
+export const NoTransactionMsg = styled.h3`
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors["gray/800"]};
 `;

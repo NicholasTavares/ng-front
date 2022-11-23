@@ -17,7 +17,7 @@ export const MyTransfers = () => {
       <S.TitleContainer>
         <S.Title>My Transfers</S.Title>
       </S.TitleContainer>
-      {trasnsfers &&
+      {trasnsfers?.length ? (
         trasnsfers.map((transaction) => (
           <S.Transfer
             typeTransfer={
@@ -54,7 +54,10 @@ export const MyTransfers = () => {
               </S.TopicContent>
             </S.ContainerTopic>
           </S.Transfer>
-        ))}
+        ))
+      ) : (
+        <S.NoTransactionMsg>No transfer at the moment</S.NoTransactionMsg>
+      )}
     </S.Container>
   );
 };
