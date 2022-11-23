@@ -2,6 +2,7 @@ const theme = {
   colors: {
     white: "#fff",
     publeNg: "#7431f4",
+    publeNgDarker: "#5C26BF",
     "cyan/700": "#0E7490",
     "gray/50": "#F9FAFB",
     "gray/200": "#e5e7eb",
