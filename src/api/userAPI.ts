@@ -13,6 +13,14 @@ type UsersGetProps = {
   username: string;
 };
 
+type UserTransactionResponse = {
+  transaction_id: string;
+  transaction_value: number;
+  transaction_created_at: string;
+  debitedAccountUser_username: string;
+  creditedAccountUser_username: string;
+};
+
 export const loggedUserGet = async (
   jwt?: string
 ): Promise<LoggedUserGetResponse> => {
@@ -29,6 +37,18 @@ export const loggedUserGet = async (
 
 export const usersGet = async (): Promise<UsersGetProps[]> => {
   const response = await baseAPI.get("/users/all");
+
+  return response.data;
+};
+
+export const userTransactions = async (
+  jwt?: string
+): Promise<UserTransactionResponse[]> => {
+  const response = await baseAPI.get("/transactions", {
+    headers: {
+      Authorization: "Bearer " + jwt,
+    },
+  });
 
   return response.data;
 };
